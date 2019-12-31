@@ -50,6 +50,7 @@ spec:
     matchLabels:
       app: zk
   serviceName: zk-hs
+  #if 3 nodes cluster，motify replicas to 3
   replicas: 1
   updateStrategy:
     type: RollingUpdate
@@ -152,6 +153,7 @@ spec:
       #   volume.beta.kubernetes.io/storage-provisioner: fuseim.pri/ifs
     spec:
       accessModes: [ "ReadWriteMany" ]
+      # motify your storageClassName
       storageClassName: nfs-client
       resources:
         requests:
